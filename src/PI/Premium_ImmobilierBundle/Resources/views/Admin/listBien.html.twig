@@ -1,0 +1,86 @@
+{% extends 'PremiumBundle::acceuil.html.twig' %}
+
+
+{% block head %}
+{% block title %}PremiumBundle:Admin:Adminimistrateur{% endblock %}
+{% block stylesheets %}
+
+
+    
+{% endblock %}
+
+{% endblock %}
+
+{% block body %}
+
+{% block slide %}
+
+{% endblock %}
+
+{% block recherche %}
+   
+{% endblock %}
+
+{% block offre %}
+<div>
+<br><br><br><br><br><br>
+</div>
+<table class="" id="table">
+
+    <!--Table head-->
+    <thead class="blue-grey lighten-4">
+        <tr>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>PRIX</th>
+            <th>IMAGE</th>
+            <th>LOCALITE</th>
+            <th>TYPE DE BIEN</th>
+            <th>ETAT DU BIEN</th>
+
+
+        </tr>
+    </thead>
+  {%for bien in biens%}
+    <tbody>
+        <tr>
+            <td>{{bien.id}}</td>
+            <td>{{bien.nomBien}}</td>
+            <td>{{bien.prixLocation}}</td>
+            <td> <img class="lesimages"  src="{{ asset('images/')}}{{bien.images[0].image}}" alt="img11" id="" class="img-responsive"></td>
+            <td>{{bien.Localite.libelle}}</td>
+            <td>{{bien.TypeBien.libelle}}</td>
+            <td>{% if bien.etat  is even %} Occupe {% else %} Disponible {% endif %} </td>
+            
+
+
+
+        </tr>
+        
+    </tbody>
+       {%endfor%}
+
+</table>
+         <div>
+<br><br><br><br>
+</div>
+<style type="text/css"  >
+.lesimages{
+    width:100px;
+    height:100px;
+}
+  </style>
+{% endblock %}
+
+
+
+{% block apropos %}
+
+{% endblock %}
+{% block partenaires %}
+{% endblock %}
+{% block galerie %}
+{% endblock %}
+
+
+{% endblock %}

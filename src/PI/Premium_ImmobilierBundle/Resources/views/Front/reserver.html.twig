@@ -1,0 +1,168 @@
+{% extends 'PremiumBundle::acceuil.html.twig' %}
+
+
+{% block title %}PremiumBundle:Front:reserver{% endblock %}
+
+{% block slide %}
+<div>
+<br><br><br><br><br>
+
+
+</div>
+   
+{% endblock %}
+{% block offre %}
+{%for bien in  biens %}
+<div class="mg-best-rooms maclasse" style="display:flex">
+<div class="container ok">
+ <div class="mySlides">
+ <div class="numbertext">1 / 3</div>
+ <img src="{{ asset('images/')}}{{bien.images[0].image}}"style="width:100%">
+ </div>
+
+ 
+ <div class="mySlides">
+ <div class="numbertext">2 / 3</div>
+ <img src="{{ asset('images/')}}{{bien.images[1].image}}"style="width:100%">
+ </div>
+
+ <div class="mySlides">
+ <div class="numbertext">3 / 3</div>
+ <img src="{{ asset('images/')}}{{bien.images[2].image}}" style="width:100%">
+ </div>
+ 
+ 
+
+ <div class="row" style="display:flex;margin-left:2px;height:500px;">
+ <img class="demo cursor" src="{{ asset('images/')}}{{bien.images[0].image}}" style="width:25%;height:20%" onclick="currentSlide(1)" alt="The Woods">
+ <img class="demo cursor" src="{{ asset('images/')}}{{bien.images[1].image}}" style="width:25%; height:20%" onclick="currentSlide(2)" alt="Northern Lights">
+ <img class="demo cursor" src="{{ asset('images/')}}{{bien.images[2].image}}" style="width:25%; height:20%"onclick="currentSlide(3)" alt="Nature and sunrise">
+ </div>
+ </div>
+ 
+
+
+
+
+
+
+
+        
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mg-sec-title">
+                            
+                            <p>NE RATER PAS CETTE OFFRE: <br>{{bien.description}}</p>
+                           <span style="background-color:yellow"> Prix:{{bien.prixlocation}}FCFA </span>
+                            <br>
+                             Premium Immobilier Satisfait ou remboursé!
+                        </div>
+                          {%endfor%}  
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+<div class="container">
+
+<fieldset> <legend>RESERVATION</legend>
+  <form action="" method="post">
+    <div class="row">
+      <div class="col-25">
+        <label for="np">Numero Piece</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="numpiece" name="numpiece" placeholder="num piece.." required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="nomcomplet">Nom Complet</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="nomcomplet" name="nomcomplet" placeholder="Papa Tene.." required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="tel">Telephone</label>
+      </div>
+      <div class="col-75">
+            
+
+        <input type="number" id="tel" name="tel" placeholder="77545454" required>
+      </div>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col-25">
+        <label for="adresse">Adresse</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="adresse" name="adresse" placeholder="Fass mbao.." required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="nomcomplet">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="email" id="email" name="email" placeholder="premium@immobilier.sn" required >
+      </div>
+    </div>
+    <br>
+    {% for bien in  biens %}
+   <input  type="hidden" name="idbienareserver" value="{{bien.id}}">
+    {% endfor %}
+    <div class="row">
+      <input class="btn btn-primary" type="submit" name="reserver" value="Reserver">
+    </div>
+  </form>
+  </fieldset>
+
+
+
+
+</div>
+
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+
+
+
+
+
+
+        </div>
+        {% endblock %}
+
+{% block recherche %}
+ 
+{% endblock %}
+
+
+
+{% block apropos %}
+ 
+{% endblock %}
+{% block partenaires %}
+{% endblock %}
+
+{% block galerie %}
+
+{% endblock %}
+{% block form %}
+ 
+{% endblock %}
+

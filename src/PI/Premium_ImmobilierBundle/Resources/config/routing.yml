@@ -1,0 +1,81 @@
+premium_homepage:
+    path:     /
+    defaults: { _controller: PremiumBundle:Default:index }
+
+
+################ LES ROUTES FRONTS ############################
+
+#route acceuil
+acceuil:
+    path:     /acceuil
+    defaults: { _controller: PremiumBundle:Front:searchBien }    
+
+#route rechercher_bien
+search_bien:
+    path:     /front/bien/search
+    defaults: { _controller: PremiumBundle:Front:searchBien }
+
+#route reserver_bien
+reserver_bien:
+    path:     /front/bien/reserver
+    defaults: { _controller: PremiumBundle:Front:reserverBien }
+
+#route afficher catalogue
+catalogue:
+        path:       /front/bien/catalogue
+        defaults: { _controller: PremiumBundle:Front:catalogueBien }
+
+
+
+################ LES ROUTES DE L' ADMIN ############################
+
+#route afficher liste Biens
+list_bien:
+        path:       /admin/bien/list
+        defaults: { _controller: PremiumBundle:Admin:listBien }
+
+#route afficher liste reservation en cours
+list_reservation:
+        path:       /admin/reservation
+        defaults: { _controller: PremiumBundle:Admin:listReservation }
+
+#route info reservation ou detail reservation
+reservation_info:
+    path:     /admin/reservations
+    defaults: { _controller: PremiumBundle:Admin:reservationInfo }
+
+#route contrat 
+contrat_reservation:
+    path:     /admin/reservation/contrat
+    defaults: { _controller: PremiumBundle:Admin:contratReservation }
+    
+
+#route imprimer reservation
+print_reservation:
+        path:       /admin/reservation/print
+        defaults: { _controller: PremiumBundle:Admin:printContrat}
+
+#route LOGIN ADMIN
+login_admin:
+    path:     /login
+    defaults: { _controller: PremiumBundle:Admin:login }
+
+#route admin template
+administrator:
+    path:     /administrator
+    defaults: { _controller: PremiumBundle:Admin:admin }
+
+#route imprimer reservation
+dashboard:
+    path:     /admin/dashboard
+    defaults: { _controller: DiamontBundle:Admin:dashboard }
+
+Calendar:
+    path:     /admin/Calendar
+    defaults: { _controller: DiamontBundle:Admin:Calendar }
+
+
+#route ajouter
+formbien:
+    path:     /admininistrator/bien
+    defaults: { _controller: PremiumBundle:Admin:formbien }        
