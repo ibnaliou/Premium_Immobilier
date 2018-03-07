@@ -1,86 +1,90 @@
-{% extends 'PremiumBundle::acceuil.html.twig' %}
+{% extends 'PremiumBundle::acceuiladmin.html.twig' %}
+ {% block container %}
+=========================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="pull-left page-title">Editable Table</h4>
+                                <ol class="breadcrumb pull-right">
+                                    <li><a href="#">Moltran</a></li>
+                                    <li><a href="#">Tables</a></li>
+                                    <li class="active">Editable Table</li>
+                                </ol>
+                            </div>
+                        </div>
 
 
-{% block head %}
-{% block title %}PremiumBundle:Admin:Adminimistrateur{% endblock %}
-{% block stylesheets %}
+                        <div class="panel">
+                            
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="m-b-30">
+                                            <button type="button" id="addToTable" class="btn btn-primary waves-effect waves-light">Add <i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered table-striped"  id="datatable-fixed-header atatable-editable">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>  
+                                            <th>NOM</th>
+                                            <th>PRIX</th>
+                                            <th>IMAGE</th>
+                                            <th>LOCALITE</th>
+                                            <th>TYPE DE BIEN</th>
+                                            <th>ETAT DU BIEN</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                     {%for bien in biens%}
 
 
-    
-{% endblock %}
 
-{% endblock %}
-
-{% block body %}
-
-{% block slide %}
-
-{% endblock %}
-
-{% block recherche %}
-   
-{% endblock %}
-
-{% block offre %}
-<div>
-<br><br><br><br><br><br>
-</div>
-<table class="" id="table">
-
-    <!--Table head-->
-    <thead class="blue-grey lighten-4">
-        <tr>
-            <th>ID</th>
-            <th>NOM</th>
-            <th>PRIX</th>
-            <th>IMAGE</th>
-            <th>LOCALITE</th>
-            <th>TYPE DE BIEN</th>
-            <th>ETAT DU BIEN</th>
-
-
-        </tr>
-    </thead>
-  {%for bien in biens%}
-    <tbody>
-        <tr>
-            <td>{{bien.id}}</td>
-            <td>{{bien.nomBien}}</td>
-            <td>{{bien.prixLocation}}</td>
-            <td> <img class="lesimages"  src="{{ asset('images/')}}{{bien.images[0].image}}" alt="img11" id="" class="img-responsive"></td>
-            <td>{{bien.Localite.libelle}}</td>
-            <td>{{bien.TypeBien.libelle}}</td>
-            <td>{% if bien.etat  is even %} Occupe {% else %} Disponible {% endif %} </td>
+                            <tr class="gradeX">
+                                            <td>{{bien.id}}</td>
+                                            <td>{{bien.nomBien}}</td>
+                                            <td>{{bien.prixLocation}}</td>
+                                            <td> <img class="lesimages"  src="{{ asset('images/')}}{{bien.images[0].image}}" alt="img11" id="" class="img-responsive"></td>
+                                            <td>{{bien.Localite.libelle}}</td>
+                                            <td>{{bien.TypeBien.libelle}}</td>
+                                            <td>{% if bien.etat  is even %} Occupe {% else %} Disponible {% endif %} </td>
             
+                                            <td class="actions">
+                                                <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                                                <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                                                <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                          {%endfor%}
+                      </table>
 
+                        </div> <!-- end Panel -->
 
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
 
-        </tr>
-        
-    </tbody>
-       {%endfor%}
+                <footer class="footer text-right">
+                    2016 © Moltran.
+                </footer>
 
-</table>
-         <div>
-<br><br><br><br>
-</div>
-<style type="text/css"  >
+            </div>
+                <style type="text/css"  >
 .lesimages{
     width:100px;
     height:100px;
 }
   </style>
-{% endblock %}
 
 
 
-{% block apropos %}
-
-{% endblock %}
-{% block partenaires %}
-{% endblock %}
-{% block galerie %}
-{% endblock %}
-
-
-{% endblock %}
+  {% endblock %}

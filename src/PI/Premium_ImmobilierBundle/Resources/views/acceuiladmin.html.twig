@@ -8,8 +8,12 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+{% block href %}
 
     <link rel="shortcut icon" href="{{asset('assets/images/favicon_1.ico')}}">
+
+     <link rel="stylesheet" href="{{asset('assets/plugins/magnific-popup/dist/magnific-popup.css')}}">
+        <link rel="stylesheet" href="asset('assets/plugins/jquery-datatables-editable/datatables.css')}}">
 
     <link href="{{asset('assets/plugins/sweetalert/dist/sweetalert.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -38,6 +42,8 @@
         {#fin#}
 
     <script src="{{asset ('assets/js/modernizr.min.js')}}"></script>
+
+    {% endblock %}
 
     
 
@@ -411,7 +417,7 @@
     </div>
     {# END wrapper #}
 
-
+ {% block javascript %}
 
     <script>
         var resizefunc = [];
@@ -480,9 +486,6 @@
         <script src="{{asset ('assets/plugins/dropzone/dist/dropzone.js')}}"></script>
 
 
-	</body>
-</html>
-
     <script src="{{asset ('assets/pages/jquery.todo.js')}}"></script>
 
     {# jQuery  #}
@@ -490,6 +493,27 @@
 
     {# jQuery  #}
     <script src="{{asset ('assets/pages/jquery.dashboard.js')}}"></script>
+
+
+    <script src="{{asset('assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
+        <script src="{{asset('assets/plugins/jquery-datatables-editable/jquery.dataTables.js')}}"></script> 
+        <script src="{{asset('assets/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+        <script src="{{('assets/pages/datatables.editable.init.js')}}"></script>
+
+
+            <script type="text/javascript">
+            $(document).ready(function() {
+            
+                $('#datatable').dataTable();
+                $('#datatable-keytable').DataTable( { keys: true } );
+                $('#datatable-responsive').DataTable();
+                $('#datatable-scroller').DataTable( { ajax: "assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true } );
+                var table = $('#datatable-fixed-header').DataTable( { fixedHeader: true } );
+            } );
+            TableManageButtons.init();
+        </script>
+
+
 
     <script type="text/javascript">
 
@@ -513,6 +537,8 @@
     
         });
     </script>
+
+{% endblock %}
 
 
 </body>

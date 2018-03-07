@@ -1,4 +1,5 @@
 $(document).ready(function() {
+ 
 
     $("#table").dataTable({
       language: {

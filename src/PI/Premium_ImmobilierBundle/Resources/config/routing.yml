@@ -77,5 +77,5 @@ Calendar:
 
 #route ajouter
 formbien:
-    path:     /admininistrator/bien
+    path:     /administrator/bien
     defaults: { _controller: PremiumBundle:Admin:formbien }        

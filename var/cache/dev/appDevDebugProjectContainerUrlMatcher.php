@@ -156,14 +156,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            // administrator
-            if ('/administrator' === $pathinfo) {
-                return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::adminAction',  '_route' => 'administrator',);
-            }
+            elseif (0 === strpos($pathinfo, '/administrator')) {
+                // administrator
+                if ('/administrator' === $pathinfo) {
+                    return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::adminAction',  '_route' => 'administrator',);
+                }
 
-            // formbien
-            if ('/admininistrator/bien' === $pathinfo) {
-                return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::formbienAction',  '_route' => 'formbien',);
+                // formbien
+                if ('/administrator/bien' === $pathinfo) {
+                    return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::formbienAction',  '_route' => 'formbien',);
+                }
+
             }
 
             // dashboard

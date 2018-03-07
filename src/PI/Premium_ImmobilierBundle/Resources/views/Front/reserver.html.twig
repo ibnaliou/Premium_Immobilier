@@ -5,7 +5,7 @@
 
 {% block slide %}
 <div>
-<br><br><br><br><br>
+<br><br><br><br>
 
 
 </div>
@@ -13,8 +13,14 @@
 {% endblock %}
 {% block offre %}
 {%for bien in  biens %}
+
+
 <div class="mg-best-rooms maclasse" style="display:flex">
+
 <div class="container ok">
+<div id="alertreseravtion" class="alert alert-success">
+  <strong>Success! Votre Resevation est prise en compte </strong>
+</div>
  <div class="mySlides">
  <div class="numbertext">1 / 3</div>
  <img src="{{ asset('images/')}}{{bien.images[0].image}}"style="width:100%">
@@ -65,63 +71,103 @@
                 </div>
             </div>
 
-<div class="container">
+<div style="margin-left:20px" class="container">
 
-<fieldset> <legend>RESERVATION</legend>
-  <form action="" method="post">
-    <div class="row">
-      <div class="col-25">
-        <label for="np">Numero Piece</label>
-      </div>
-      <div class="col-75">
-        <input type="number" id="numpiece" name="numpiece" placeholder="num piece.." required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="nomcomplet">Nom Complet</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="nomcomplet" name="nomcomplet" placeholder="Papa Tene.." required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="tel">Telephone</label>
-      </div>
-      <div class="col-75">
-            
 
-        <input type="number" id="tel" name="tel" placeholder="77545454" required>
-      </div>
-    </div>
-    
-    
-    <div class="row">
-      <div class="col-25">
-        <label for="adresse">Adresse</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="adresse" name="adresse" placeholder="Fass mbao.." required>
-      </div>
+<fieldset style=""> <legend> <a id="conne" > SE CONNECTER </a> OU <a id="insc" > S'INSCRIRE </a></legend>
+<form id="formconnexion" style="">
+    <p class="h4 text-center mb-4">CONNECTION</p>
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">Votre Email</label>
+
+        <input type="email" name="mail" id="materialFormLoginEmailEx" class="form-control">
+    </div>  
+
+    <!-- Material input password -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Votre Mot de Passe</label>
+
+        <input name="password" type="password" id="materialFormLoginPasswordEx" class="form-control">
     </div>
 
-    <div class="row">
-      <div class="col-25">
-        <label for="nomcomplet">Email</label>
-      </div>
-      <div class="col-75">
-        <input type="email" id="email" name="email" placeholder="premium@immobilier.sn" required >
-      </div>
-    </div>
-    <br>
-    {% for bien in  biens %}
-   <input  type="hidden" name="idbienareserver" value="{{bien.id}}">
-    {% endfor %}
-    <div class="row">
+    <div class="text-center mt-4">
       <input class="btn btn-primary" type="submit" name="reserver" value="Reserver">
     </div>
-  </form>
+</form>
+
+
+  <form id="formreservation" action="" method="post" style="">
+    <p class="h4 text-center mb-4">INSCRIPTION</p>
+
+    <!--  numero piece -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">NUMERO PIECE</label>
+        <input type="number" id="materialFormLoginEmailEx" name="numpiece" placeholder="num piece.." class="form-control" required>
+
+    </div>  
+
+
+     <!-- Nom Complet -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">NOM COMPLET</label>
+
+    <input type="text" id="nomcomplet" name="nomcomplet" placeholder="Papa Tene.." class="form-control" required>
+    </div>  
+
+     <!-- NuMERO TELEPHONE -->
+    <div class="md-form">
+        <i class="fa fa-phone prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">TELEPHONE</label>
+        <input type="number" id="tel" name="tel" placeholder="77545454" class="form-control" required>
+    </div>
+
+    <!-- ADRESSES -->
+    <div class="md-form">
+        <i class="fa fa-home prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">ADRESSE</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Fass mbao.." class="form-control" required>
+    </div>   
+
+
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">VOTRE EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="premium@immobilier.sn" class="form-control" required >
+
+    </div>  
+
+    <!-- Material input password -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">VOTRE MOT DE PASSE</label>
+
+        <input type="password" id="materialFormLoginPasswordEx" class="form-control">
+    </div>
+    <!-- Rettaper mt de pass -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">CONFIRMER MOT DE PASSE</label>
+
+        <input type="password" id="materialFormLoginPasswordEx" class="form-control">
+    </div>
+     {% for bien in  biens %}
+   <input  type="hidden" name="idbienareserver" value="{{bien.id}}">
+    {% endfor %}
+
+    <div class="text-center mt-4">
+      <input class="btn btn-primary" type="submit" name="reserver" value="Reserver">
+    </div>
+</form>
+
+ 
   </fieldset>
 
 
@@ -137,7 +183,6 @@
 <style type="text/css">
 
 </style>
-
 
 
 
