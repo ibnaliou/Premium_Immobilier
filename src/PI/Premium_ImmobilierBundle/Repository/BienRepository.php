@@ -118,6 +118,23 @@ public function findBiens($idLocalite=0,$idType=0,$budget=0)
           return $query->getResult();
       }
 
+      
+   
+
+
+
+      /** Update etat du bien en 0 => non disponible */
+     public function updateEtatBien($id)
+     {
+        
+        $dql =   "UPDATE  PI\Premium_ImmobilierBundle\Entity\Bien b   SET b.etat = 0 WHERE b.id = :id";
+        
+         $query = $this->getEntityManager()->createQuery($dql);
+         $query->setParameter('id', $id);
+ 
+           return $query->getResult();   
+     }
+  
 
 
   

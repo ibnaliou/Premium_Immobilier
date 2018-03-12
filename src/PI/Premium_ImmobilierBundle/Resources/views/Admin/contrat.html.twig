@@ -33,11 +33,11 @@
 <br><br><br><br><br><br>
 </div>
 <style>
-h2,
+.h2,
 h3, 
 h4, 
 h5{
- background-color: blue;
+ background-color: orange;
 }
 #delete{
  list-style-type: none;
@@ -57,7 +57,7 @@ h5{
  <div class="col-md-12">
  <div class="panel panel-blue">
  <div class="panel-heading dark-overlay">
- <h2> DETAILS DU BIEN RESERVER <h2>
+ <h2 class="h2"> DETAILS DU BIEN RESERVER <h2>
  </div>
  <div class="panel-body row">
  <ul class="col-md-4 ul_detail">
@@ -187,7 +187,7 @@ h5{
  </div>
  <div class="panel-body row">
  <div class="col-md-12">
- <form method="POST" action"{{path ('contrat_reservation')}}" class="form-group">
+ <form method="POST" action="{{path ('contrat_reservation')}}" class="form-group">
  <div class="form-group">
  <label>TERMES ET CONDITIONS DU CONTRAT</label>
  <center>
@@ -210,9 +210,9 @@ h5{
  <input type="hidden" name="idclient" value="{{reservation.Client.id}}" />
  <input type="hidden" name="idbien" value="{{reservation.Bien.id}}" />
  <input type="hidden" name="caution" value="{{reservation.Bien.prixlocation}}" />
- <input type="hidden" name="montant" value="{{2 * reservation.Bien.prixlocation}}" />
+ <input type="hidden" name="montant" value="{{reservation.Bien.prixlocation}}" />
  
- <input style="color: #1a2b3c;" id="print" type="submit" value="VALIDER" class="btn btn-primary"> 
+<a href="{{path ('print_reservation',{'id':reservation.id})}}" > <input style="color: #1a2b3c;" id="print" type="submit" value="VALIDER" class="btn btn-primary"></a> 
  </form>
  </div>
  </di>
@@ -229,15 +229,7 @@ h5{
  </div>
  <!--/.col-->
  <script type="text/javascript">
- $(document).ready(function() { 
- $('#active').click(function () {
- if($("#active").is(':checked')){
- $('#print').css('visibility','visible'); 
- }else{
- $('#print').css('visibility','hidden'); 
- }
- });
- });
+ 
 </script> 
  {% endfor %}
 

@@ -114,7 +114,8 @@ class AdminController extends Controller
         extract($_POST);
         $client= $em->getRepository(Client::class)->find($idclient);
         $bien = $em->getRepository(Bien::class)->find($idbien);
-
+        
+        
         $contrat = new Contrat();
         $contrat->setDateContrat(new \DateTime('now'));
         $contrat->setCaution($caution);
@@ -135,17 +136,25 @@ class AdminController extends Controller
         $em->persist($paiement);
         $em->flush();
 
+        //update etat du bien en 0 ce qui veut dire non disponible
+        $UdateBien = $this->getDoctrine()
+        ->getManager()
+        ->getRepository('PremiumBundle:Bien')
+        ->updateEtatBien($idbien);
 
-        return $this->redirectToRoute('print_reservation');
+        return $this->redirectToRoute('print_reservation' ,array('id' => 1));
 
         
         }
         if ($request->isMethod('GET')) {
         extract($_GET);
+
         $reservation= $em->getRepository(Reservation::class)->FindBy(array('id' => $id,'etat'=>0 ));
         $reservation[0]->setEtat("1");
         $em->persist($reservation[0]);
         $em->flush();
+
+
         
         $text = $this->getDoctrine()
             ->getManager()

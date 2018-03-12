@@ -495,8 +495,12 @@
       </parameter>
     </parameter>
     <parameter key="easyadmin.cache.dir">/var/www/html/Premium_Immobilier/var/cache/dev/easy_admin</parameter>
-    <parameter key="knp_snappy.pdf.binary">/usr/local/bin/wkhtmltopdf</parameter>
-    <parameter key="knp_snappy.pdf.options" type="collection"/>
+    <parameter key="knp_snappy.pdf.binary">wkhtmltopdf</parameter>
+    <parameter key="knp_snappy.pdf.options" type="collection">
+      <parameter key="no-outline">true</parameter>
+      <parameter key="page-size">LETTER</parameter>
+      <parameter key="encoding">UTF-8</parameter>
+    </parameter>
     <parameter key="knp_snappy.pdf.env" type="collection"/>
     <parameter key="knp_snappy.image.binary">/usr/local/bin/wkhtmltoimage</parameter>
     <parameter key="knp_snappy.image.options" type="collection"/>
@@ -775,7 +779,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>zTfDK+EdIDO7z+eGMerDt1</argument>
+      <argument>PuE9PZss2Mh+NqtAv4ILxK</argument>
       <argument>/var/www/html/Premium_Immobilier/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -785,7 +789,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>zTfDK+EdIDO7z+eGMerDt1</argument>
+      <argument>PuE9PZss2Mh+NqtAv4ILxK</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2360,12 +2364,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a97af3f052208.34878365</argument>
+      <argument>5aa5c58f90c7d5.81310730</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a97af3f052208.34878365</argument>
+      <argument>5aa5c58f90c7d5.81310730</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3611,8 +3615,12 @@
     </service>
     <service id="knp_snappy.pdf" class="Knp\Snappy\Pdf">
       <tag name="monolog.logger" channel="snappy"/>
-      <argument>/usr/local/bin/wkhtmltopdf</argument>
-      <argument type="collection"/>
+      <argument>wkhtmltopdf</argument>
+      <argument type="collection">
+        <argument key="no-outline">true</argument>
+        <argument key="page-size">LETTER</argument>
+        <argument key="encoding">UTF-8</argument>
+      </argument>
       <argument type="collection"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.snappy" on-invalid="ignore"/>
@@ -4445,7 +4453,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>XwHjY9GDAA</argument>
       <argument>0</argument>
-      <argument>zTfDK+EdIDO7z+eGMerDt1</argument>
+      <argument>PuE9PZss2Mh+NqtAv4ILxK</argument>
       <argument>/var/www/html/Premium_Immobilier/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4453,7 +4461,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Bc0c3HMG-4</argument>
       <argument>0</argument>
-      <argument>zTfDK+EdIDO7z+eGMerDt1</argument>
+      <argument>PuE9PZss2Mh+NqtAv4ILxK</argument>
       <argument>/var/www/html/Premium_Immobilier/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4461,7 +4469,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>eAHXyEPYCJ</argument>
       <argument>0</argument>
-      <argument>zTfDK+EdIDO7z+eGMerDt1</argument>
+      <argument>PuE9PZss2Mh+NqtAv4ILxK</argument>
       <argument>/var/www/html/Premium_Immobilier/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4469,7 +4477,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>6-cT0aJwKi</argument>
       <argument>0</argument>
-      <argument>zTfDK+EdIDO7z+eGMerDt1</argument>
+      <argument>PuE9PZss2Mh+NqtAv4ILxK</argument>
       <argument>/var/www/html/Premium_Immobilier/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

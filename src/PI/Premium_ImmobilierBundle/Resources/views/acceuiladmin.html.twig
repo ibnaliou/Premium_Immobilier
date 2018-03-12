@@ -8,7 +8,8 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-{% block href %}
+
+    {% block href %}
 
     <link rel="shortcut icon" href="{{asset('assets/images/favicon_1.ico')}}">
 
@@ -45,12 +46,11 @@
 
     {% endblock %}
 
-    
-
 </head>
 
 
 <body class="fixed-left">
+    {% block body%}
     {# Begin page #}
     <div id="wrapper">
 
@@ -172,7 +172,7 @@
                     </div>
                     <div class="user-info">
                         <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">IBNALIOU<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">TAFAss<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{asset ('javascript:void(0)')}}"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
                                 <li><a href="{{asset ('javascript:void(0)')}}"><i class="md md-settings"></i> Settings</a></li>
@@ -271,13 +271,11 @@
         {# ============================================================== #}
         {# Start right Content here #}
         {# ============================================================== #}
+        {% block container %}
         <div class="content-page">
             {# Start content #}
-
- 
             <div class="content">
                 <div class="container">
- {%block content %}
 
 {#NOTRE FORMIULAIRE#}
 
@@ -287,9 +285,6 @@
                         </div>
                          {# End row #}
                     </div>
-
-{%endblock content %}
-
                 {# container #}
 
             </div>
@@ -300,6 +295,7 @@
             </footer>
 
         </div>
+        {% endblock container %}
         {# ============================================================== #}
         {# End Right content here #}
         {# ============================================================== #}
@@ -417,7 +413,7 @@
     </div>
     {# END wrapper #}
 
- {% block javascript %}
+{% block javascript %}
 
     <script>
         var resizefunc = [];
@@ -504,11 +500,11 @@
             <script type="text/javascript">
             $(document).ready(function() {
             
-                $('#datatable').dataTable();
+                $('#datatable-editable').dataTable();
                 $('#datatable-keytable').DataTable( { keys: true } );
                 $('#datatable-responsive').DataTable();
                 $('#datatable-scroller').DataTable( { ajax: "assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true } );
-                var table = $('#datatable-fixed-header').DataTable( { fixedHeader: true } );
+                var table = $('#datatable-editable').DataTable( { fixedHeader: true } );
             } );
             TableManageButtons.init();
         </script>
@@ -539,8 +535,7 @@
     </script>
 
 {% endblock %}
-
-
+{% endblock %}
 </body>
 
 </html>

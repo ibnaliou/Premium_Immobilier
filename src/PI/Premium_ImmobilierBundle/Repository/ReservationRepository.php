@@ -34,7 +34,7 @@ class ReservationRepository extends \Doctrine\ORM\EntityRepository
       public function listReservation()
     {
         $dql = "SELECT r,b,i FROM PI\Premium_ImmobilierBundle\Entity\Reservation r
-        left Join  r.client c  Join  r.bien b Join  b.TypeBien t Join b.Localite l  Join b.images i where r.etat='0' ";
+        left Join  r.client c  Join  r.bien b Join  b.TypeBien t Join b.Localite l  Join b.images i where r.etat='0' and b.etat='1' ";
         $query = $this->getEntityManager()->createQuery($dql);
 
         return $query->getResult();
