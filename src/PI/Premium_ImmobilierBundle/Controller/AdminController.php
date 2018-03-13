@@ -142,7 +142,7 @@ class AdminController extends Controller
         ->getRepository('PremiumBundle:Bien')
         ->updateEtatBien($idbien);
 
-        return $this->redirectToRoute('print_reservation' ,array('id' => 1));
+        return $this->redirectToRoute('print_reservation' ,array('id' => ""));
 
         
         }

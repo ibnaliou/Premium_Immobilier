@@ -48,7 +48,6 @@ class ReservationRepository extends \Doctrine\ORM\EntityRepository
         left Join  r.client c  Join  r.bien b Join  b.TypeBien t Join b.Localite l  Join b.images i where r.id= :id";
         $query = $this->getEntityManager()->createQuery($dql);
         $query->setParameter('id', $id);
-
         return $query->getResult();
     }
 
