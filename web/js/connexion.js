@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-alert("ok")
+
     $("#formreservation").hide() 
     $("#infobienapro").hide() 
     $("#infobiennpro").hide() 
@@ -38,5 +38,17 @@ alert("ok")
         $("#infopersonpro").show()
         
     }) 
+
+
+    //disable bouton valider contrat
+    $('#print').attr("disabled", true);
+    $('.able').click(function(){
+        $('#print').attr("disabled", false); 
+     });
+
+     $('.denied').click(function(){
+        $('#print').attr("disabled", true); 
+     }); 
+     
 
 });
