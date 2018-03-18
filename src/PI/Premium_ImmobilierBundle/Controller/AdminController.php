@@ -1,7 +1,6 @@
 <?php
 
 namespace PI\Premium_ImmobilierBundle\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use PI\Premium_ImmobilierBundle\Entity\TypeBien;
@@ -58,6 +57,7 @@ class AdminController extends Controller
         return $this->render('PremiumBundle:Admin:reservation.html.twig',
         array('reservations' => $listeReservation));
     }
+    
 
     /*****afficher les information d'une reservation  */
     public function reservationInfoAction(Request $request){
@@ -115,7 +115,6 @@ class AdminController extends Controller
         $client= $em->getRepository(Client::class)->find($idclient);
         $bien = $em->getRepository(Bien::class)->find($idbien);
         
-        
         $contrat = new Contrat();
         $contrat->setDateContrat(new \DateTime('now'));
         $contrat->setCaution($caution);
@@ -142,7 +141,7 @@ class AdminController extends Controller
         ->getRepository('PremiumBundle:Bien')
         ->updateEtatBien($idbien);
 
-        return $this->redirectToRoute('print_reservation' ,array('id' => ""));
+        return $this->redirectToRoute('print_reservation' ,array('id' =>$idreservation));
 
         
         }
@@ -175,17 +174,22 @@ class AdminController extends Controller
 
 
         public function  printContratAction (Request $request){
-            $contrat = $this->getDoctrine()
+            extract($_GET);
+            // $contrat = $this->getDoctrine()
+            // ->getManager()
+            // ->getRepository('PremiumBundle:Contrat')
+            // ->find($id);
+            $reservation = $this->getDoctrine()
             ->getManager()
-            ->getRepository('PremiumBundle:Contrat')
-            ->findAll();
+            ->getRepository('PremiumBundle:Reservation')
+            ->findReservationById($id);
 
 
         $snappy=$this->get("knp_snappy.pdf");
         
         $html=$this->renderView("default/print.html.twig",array(
             "title"=>"Contat location",
-            'contrats'=>$contrat
+            'contrats'=>$reservation
          ));
         $filename="custom_pdf_from_twig";
 
@@ -231,5 +235,19 @@ class AdminController extends Controller
      public function formbienAction(){
         return $this->render('PremiumBundle:Admin:formbien.html.twig',array());
     }
+   
+    public function proreservationAction()
+    {
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('PremiumBundle:Proreservation');
+
+        $reservationpro = $repository->lisReservation();
+
+        return $this->render('PremiumBundle:Admin:proreservation.html.twig',
+        array('proreservations' => $reservationpro));
+    }
+
    
 }

@@ -35,13 +35,13 @@
                                 <div class="panel-body">
                                     <font style="vertical-aligner: hériter;">
                                         <font style="vertical-align: inherit;">
-                                            NOM COMPLET :<p>{{reservation.Client.nomComplet}}</p>
+                                            NOM COMPLET :<p>{{reservation.Client.nomComplet|upper}}</p>
                                             Numero DE PIECE
                                             <p>{{reservation.Client.numPiece}}</p>
                                             Numero de TELEPHONE :
                                             <p>{{reservation.Client.tel}}</p>
                                             ADRESSE :
-                                            <p>{{reservation.Client.adresse}}</p>
+                                            <p>{{reservation.Client.adresse|upper}}</p>
                                             ADRESSE MAIL:
                                             <p>
                                                 {{reservation.Client.email}}</p>
@@ -113,7 +113,7 @@
                                                 NOM:
                                                 <p>{{reservation.Bien.nomBien}}</p>
                                                 LOCALITE:
-                                                <p>{{reservation.Bien.Localite.libelle}}</p>
+                                                <p>{{reservation.Bien.Localite.libelle|upper}}</p>
                                                 TYPE DE BIEN:
                                                 <p>{{reservation.Bien.TypeBien.libelle}}</p>
                                                 PRIX DE LOCATION:

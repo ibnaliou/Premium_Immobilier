@@ -1,0 +1,93 @@
+{% extends 'PremiumBundle::acceuiladmin.html.twig' %}
+ {% block container %}
+=========================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="pull-left page-title">Editable Table</h4>
+                                <ol class="breadcrumb pull-right">
+                                    <li><a href="#">Moltran</a></li>
+                                    <li><a href="#">Tables</a></li>
+                                    <li class="active">Editable Table</li>
+                                </ol>
+                            </div>
+                        </div>
+
+
+                        <div class="panel">
+                            
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="m-b-30">
+                                            <button type="button" id="addToTable" class="btn btn-primary waves-effect waves-light">Add <i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <table class="table table-bordered table-striped" id="datatable-editable">
+                                    <thead>
+                                        <tr>
+                                              
+                                                <th>NOM Proprietaire</th>
+                                                <th >CNI</th>
+                                                <th >TÉLÉPHONE</th>
+                                                <th>ADRESSE</th>
+                                                <th >EMAIL</th>
+                                                <th >CODE BANQUE</th>
+                                                <th>NOM BIEN</th>
+                                                <th>LOCALITÉ</th>
+                                                <th>TYPE BIEN</th>
+                                                <th>PRIX</th>
+                                                <th>IMAGE</th> 
+                                                <th>ACTION</th>
+                                        </tr>
+                                    </thead>
+                                     {%for reservation in proreservations%}
+
+
+                            <tr class="gradeX">
+                                            <td>{{reservation.Proprietaire.nomComplet}}</td>
+                                            <td>{{reservation.Proprietaire.numPiece}}</td>
+                                            <td>{{reservation.Proprietaire.tel}}</td>
+                                            <td>{{reservation.Proprietaire.adresse}}</td>
+                                            <td>{{reservation.Proprietaire.email}}</td>
+                                            <td>{{reservation.Proprietaire.codeBanque}}</td>
+                                            <td>{{reservation.Bien.nomBien}}</td>
+                                            <td>{{reservation.Bien.Localite.libelle}}</td>
+                                            <td>{{reservation.Bien.TypeBien.libelle}}</td>
+                                            <td>{{reservation.Bien.prixlocation}}</td>
+                                            <td> <img class="lesimages"  src="{{ asset('images/')}}{{reservation.bien.images[0].image}}" alt="img1" id="" class="img-responsive"></td>
+                                            <td class="actions">
+                                                <a href="{{path ('list_reservePro')}}" class="btn btn-primary" >Details</a></td>
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                          {%endfor%}
+                      </table>
+
+                        </div> <!-- end Panel -->
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <footer class="footer text-right">
+                    2016 © Moltran.
+                </footer>
+
+            </div>
+                <style type="text/css"  >
+.lesimages{
+    width:100px;
+    height:100px;
+}
+  </style>
+
+
+{% endblock %}

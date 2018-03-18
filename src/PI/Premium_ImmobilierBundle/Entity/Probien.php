@@ -63,6 +63,12 @@ class Probien
      */
     private $prix;
 
+    /**
+    * @ORM\OneToMany(targetEntity="PI\Premium_ImmobilierBundle\Entity\Proimage", mappedBy="bien");
+    */
+   private $images;
+
+
 
     /**
      * Get id
@@ -217,5 +223,25 @@ class Probien
     {
         return $this->prix;
     }
+
+   /**
+    * Get the value of images
+    */ 
+   public function getImages()
+   {
+      return $this->images;
+   }
+
+   /**
+    * Set the value of images
+    *
+    * @return  self
+    */ 
+   public function setImages($images)
+   {
+      $this->images = $images;
+
+      return $this;
+   }
 }
 

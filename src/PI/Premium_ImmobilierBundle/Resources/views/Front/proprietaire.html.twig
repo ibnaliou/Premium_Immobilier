@@ -1,0 +1,265 @@
+{% extends 'PremiumBundle::acceuil.html.twig' %}
+{% block title %}PremiumBundle:Front:Proprietaire{% endblock %}
+
+{% block slide %}
+ <div>
+ <br><br>
+ </div>
+{% endblock %}
+{% block recherche %}
+{% endblock %}
+
+{% block apropos %}
+
+{% endblock %}
+{% block offre %}
+ <div>
+ <br><br>
+ <br><br>
+ </div>
+ <div style="margin-left:20px" class="container">
+
+{% block partenaires %}
+
+
+
+{% endblock %}
+<fieldset style=""> <legend> <a id="conne" > J'AI DEJA UN COMPTE </a> OU <a id="insc" > JE SUIS NOUVEAU </a></legend>
+<form id="formconnexion" style="background-color:orange">
+
+<div id="infopersoapro"><!--debut div info perso ancien proritaire-->
+    <p class="h4 text-center mb-4">INFORMATIONS PERSONNELLES</p>
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">Votre Email</label>
+
+        <input type="email" name="mail" id="materialFormLoginEmailEx" class="form-control">
+    </div>  
+
+    <!-- Material input password -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Votre Mot de Passe</label>
+
+        <input name="password" type="password" id="materialFormLoginPasswordEx" class="form-control">
+    </div>
+    
+    <a name="" id="next" class="btn btn-dark"  role="button">suivant</a>
+</div><!--end div info perso ancien proritaire-->
+
+<div id="infobienapro" ><!--debut div info bien ancien proritaire-->
+    <p class="h4 text-center mb-4">INFORMATIONS DU BIEN</p>
+    <!-- nom bien -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Nom du Bien</label>
+
+        <input name="nombien" type="text"  class="form-control" placeholder="Immeuble R+3" required>
+    </div>
+
+    <!-- LOCALITE DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-map prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Localite du Bien</label>
+
+        <input name="localite" type="text"  class="form-control" placeholder="Pikine" required>
+    </div>
+
+    <!-- TYPE DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-map prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Type du Bien</label>
+
+        <input name="type" type="text" placeholder="Immeuble"   class="form-control" required>
+    </div>
+
+    <!-- PRIX DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-money prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Prix Souhaite</label>
+
+        <input name="prix" type="number" placeholder="20000000"   class="form-control" required>
+    </div>
+
+     <!-- IMAGE DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-picture prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx"> Images du Bien</label>
+        <input name="image1" type="file" placeholder="20000000"   class="form-control" required>
+        <input name="image2" type="file" placeholder="20000000"   class="form-control" >
+        <input name="image3" type="file" placeholder="20000000"   class="form-control" >
+    </div>
+
+    <!--DESCRIPTION DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-money prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Description du Bien</label>
+        <input name="description" type="textarea" placeholder="Un immmeuble situé à la sicap SA supercie de ..."   class="form-control" required>
+    </div>
+
+    
+
+    <a name="" id="previous" class="btn btn-dark" role="button">précedent</a>
+    <div class="text-center mt-4">
+      <input class="btn btn-light" type="submit" name="confier" value="CONFIER">
+    </div>
+</div><!--end div info bien ancien proritaire-->
+    
+</form>
+
+
+  <form id="formreservation" action="" method="post" style="background-color:orange">
+<div id="infopersonpro"><!--debut div info perso new proritaire-->
+
+    <p class="h4 text-center mb-4">INFORMATIONS PERSONNELLES</p>
+
+    <!--  numero piece -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">NUMERO PIECE</label>
+        <input type="number" id="materialFormLoginEmailEx" name="numpiece" placeholder="num piece.." class="form-control" required>
+
+    </div>  
+
+
+     <!-- Nom Complet -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">NOM COMPLET</label>
+
+    <input type="text" id="nomcomplet" name="nomcomplet" placeholder="Papa Tene.." class="form-control" required>
+    </div>  
+
+     <!-- NuMERO TELEPHONE -->
+    <div class="md-form">
+        <i class="fa fa-phone prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">TELEPHONE</label>
+        <input type="number" id="tel" name="tel" placeholder="77545454" class="form-control" required>
+    </div>
+
+    <!-- ADRESSES -->
+    <div class="md-form">
+        <i class="fa fa-home prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">ADRESSE</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Fass mbao.." class="form-control" required>
+    </div>   
+
+
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">VOTRE EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="premium@immobilier.sn" class="form-control" required >
+
+    </div>
+
+    <!-- codeBanque -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>        
+        <label for="materialFormLoginEmailEx">Numero Carte Bancaire</label>
+        <input type="text" id="email" name="codebanque" placeholder="785454542" class="form-control"  >
+
+    </div>  
+
+    <!-- Material input password -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">VOTRE MOT DE PASSE</label>
+
+        <input type="password" id="materialFormLoginPasswordEx" class="form-control">
+    </div>
+    <!-- Rettaper mt de pass -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">CONFIRMER MOT DE PASSE</label>
+
+        <input type="password" id="materialFormLoginPasswordEx" class="form-control">
+    </div>
+     {# {% for bien in  biens %}
+   <input  type="hidden" name="idbienareserver" value="{{bien.id}}">
+    {% endfor %} #}
+ <a name="" id="next2" class="btn btn-dark"  role="button">suivant</a>
+</div><!--end div info perso new proritaire-->
+
+<div id="infobiennpro" ><!--debut div info bien new proritaire-->
+     <p class="h4 text-center mb-4">INFORMATIONS DU BIEN</p>
+    <!-- nom bien -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Nom du Bien</label>
+
+        <input name="nombien" type="text"  class="form-control" placeholder="Immeuble R+3" required>
+    </div>
+
+    <!-- LOCALITE DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-map prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Localite du Bien</label>
+
+        <input name="localite" type="text"  class="form-control" placeholder="Pikine" required>
+    </div>
+
+    <!-- TYPE DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-map prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Type du Bien</label>
+
+        <input name="type" type="text" placeholder="Immeuble"   class="form-control" required>
+    </div>
+
+    <!-- PRIX DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-money prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Prix Souhaite</label>
+
+        <input name="prix" type="number" placeholder="20000000"   class="form-control" required>
+    </div>
+
+     <!-- IMAGE DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-picture prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx"> Images du Bien</label>
+        <input name="image1" type="file" placeholder="20000000"   class="form-control" required>
+        <input name="image2" type="file" placeholder="20000000"   class="form-control" >
+        <input name="image3" type="file" placeholder="20000000"   class="form-control" >
+    </div>
+
+    <!--DESCRIPTION DU BIEN-->
+    <div class="md-form">
+        <i class="fa fa-money prefix grey-text"></i>
+                <label for="materialFormLoginPasswordEx">Description du Bien</label>
+        <input name="description" type="textarea" placeholder="Un immmeuble situé à la sicap SA supercie de ..."   class="form-control" required>
+    </div>
+
+    
+
+    <a  name="" id="previous2" class="btn btn-dark" role="button">précedent</a>
+    
+    <div class="text-center mt-4 k">
+      <input class="btn btn-light" type="submit" name="confier" value="CONFIER">
+    </div>
+</div><!--end div info bien new proritaire-->
+    
+</form>
+
+ 
+  </fieldset>
+
+
+
+
+</div>
+<br><br>
+ {% endblock %}
+
+{% block galerie %}
+
+{% endblock %}
+
+
+{% block form %}
+
+{% endblock %}

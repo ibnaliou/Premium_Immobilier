@@ -15,11 +15,11 @@ class __TwigTemplate_6ee109ee84b33f4e1b4a0a0df06fe2b0523a77290fe53b373144c09108a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d27b8cc7f556409bb78930fe9880958468b5461967ad46ebc48d052f6db34cf0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d27b8cc7f556409bb78930fe9880958468b5461967ad46ebc48d052f6db34cf0->enter($__internal_d27b8cc7f556409bb78930fe9880958468b5461967ad46ebc48d052f6db34cf0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
+        $__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284->enter($__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
 
-        $__internal_9013baf5d2cb1a7ac6129baa0b63cd10be5be508f559934af004339a1ae8a410 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9013baf5d2cb1a7ac6129baa0b63cd10be5be508f559934af004339a1ae8a410->enter($__internal_9013baf5d2cb1a7ac6129baa0b63cd10be5be508f559934af004339a1ae8a410_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
+        $__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6->enter($__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
 
         // line 1
         echo " <center><h1> CONTRAT DE LOCATION </h1></center>
@@ -31,10 +31,26 @@ class __TwigTemplate_6ee109ee84b33f4e1b4a0a0df06fe2b0523a77290fe53b373144c09108a
 <b>ENTRE LES SOUSSIGNES</b><br><br>
 PREMIUM IMMOBILIER SA sise &agrave; CTIC DAKAR <br>
 <pre>CI-APRES DENOMME                                                            <u>LE BAILLEUR </u>                                                                                        d'une part,
-
-ET M. Mme, Melle ........
-n&eacute;(e) le .........
-demueurant .....
+";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["contrats"] ?? $this->getContext($context, "contrats")));
+        foreach ($context['_seq'] as $context["_key"] => $context["contrat"]) {
+            // line 8
+            echo "ET M. Mme, Melle ";
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Client", array()), "nomComplet", array())), "html", null, true);
+            echo "......
+n&eacute;(e) le ......... 
+demueurant à..";
+            // line 10
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Client", array()), "adresse", array()), "html", null, true);
+            echo "...
+Numero Carte Nationale ";
+            // line 11
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Client", array()), "numPiece", array()), "html", null, true);
+            echo ", Numero Téléphone ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Client", array()), "tel", array()), "html", null, true);
+            echo "
 
 CI-APRES DENOMME                                                            <u>LE LOCATAIRE</u>                                                                                      d'autre part.
 </pre>
@@ -49,10 +65,30 @@ conditions suivantes.
 <b>DESIGNATION</b><pre>
 
 Adresse des locaux lou&eacute;
-...........
+..... ";
+            // line 26
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["contrat"], "Bien", array()), "Localite", array()), "libelle", array()), "html", null, true);
+            echo " ......
+
+Prix de location;
+..... ";
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Bien", array()), "prixlocation", array()), "html", null, true);
+            echo " FCFA......
+
+Caution de la location
+..... ";
+            // line 32
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Bien", array()), "prixlocation", array()), "html", null, true);
+            echo " FCFA......
+
+
 
 Consistance et d&eacute;signations des lieux :
-................
+.....";
+            // line 37
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["contrat"], "Bien", array()), "description", array()), "html", null, true);
+            echo "...........
 
 
 
@@ -65,7 +101,7 @@ Consistance et d&eacute;signations des lieux :
 
 <b>DUREE</b><pre>
 
-Le pr&eacute;sent contrat est consenti pour une durée de......................ans commençant à courir le ............................et se terminant le .................................sous 
+Le pr&eacute;sent contrat est consenti pour une durée de.......1 (un)...............ans commençant à courir le ............................et se terminant le .................................sous 
 réserve de reconduction ou de renouvellement.
 
 </pre>
@@ -124,12 +160,17 @@ LE BAILLEUR                                                                     
 de la mention manuscrite                                                               de la mention manuscrite                                                       de la mention manuscrite
 « Lu et approuvé »)                                                                      « Lu et approuvé »)                                                                       « Lu et approuvé ») 
 
-<h2>";
+<h2>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contrat'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_d27b8cc7f556409bb78930fe9880958468b5461967ad46ebc48d052f6db34cf0->leave($__internal_d27b8cc7f556409bb78930fe9880958468b5461967ad46ebc48d052f6db34cf0_prof);
+        $__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284->leave($__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284_prof);
 
         
-        $__internal_9013baf5d2cb1a7ac6129baa0b63cd10be5be508f559934af004339a1ae8a410->leave($__internal_9013baf5d2cb1a7ac6129baa0b63cd10be5be508f559934af004339a1ae8a410_prof);
+        $__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6->leave($__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6_prof);
 
     }
 
@@ -145,7 +186,7 @@ de la mention manuscrite                                                        
 
     public function getDebugInfo()
     {
-        return array (  28 => 2,  25 => 1,);
+        return array (  90 => 37,  82 => 32,  76 => 29,  70 => 26,  50 => 11,  46 => 10,  40 => 8,  36 => 7,  28 => 2,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -164,10 +205,11 @@ de la mention manuscrite                                                        
 <b>ENTRE LES SOUSSIGNES</b><br><br>
 PREMIUM IMMOBILIER SA sise &agrave; CTIC DAKAR <br>
 <pre>CI-APRES DENOMME                                                            <u>LE BAILLEUR </u>                                                                                        d'une part,
-
-ET M. Mme, Melle ........
-n&eacute;(e) le .........
-demueurant .....
+{%for contrat in contrats%}
+ET M. Mme, Melle {{contrat.Client.nomComplet|upper}}......
+n&eacute;(e) le ......... 
+demueurant à..{{contrat.Client.adresse}}...
+Numero Carte Nationale {{contrat.Client.numPiece}}, Numero Téléphone {{contrat.Client.tel}}
 
 CI-APRES DENOMME                                                            <u>LE LOCATAIRE</u>                                                                                      d'autre part.
 </pre>
@@ -182,10 +224,18 @@ conditions suivantes.
 <b>DESIGNATION</b><pre>
 
 Adresse des locaux lou&eacute;
-...........
+..... {{contrat.Bien.Localite.libelle}} ......
+
+Prix de location;
+..... {{contrat.Bien.prixlocation}} FCFA......
+
+Caution de la location
+..... {{contrat.Bien.prixlocation}} FCFA......
+
+
 
 Consistance et d&eacute;signations des lieux :
-................
+.....{{contrat.Bien.description}}...........
 
 
 
@@ -198,7 +248,7 @@ Consistance et d&eacute;signations des lieux :
 
 <b>DUREE</b><pre>
 
-Le pr&eacute;sent contrat est consenti pour une durée de......................ans commençant à courir le ............................et se terminant le .................................sous 
+Le pr&eacute;sent contrat est consenti pour une durée de.......1 (un)...............ans commençant à courir le ............................et se terminant le .................................sous 
 réserve de reconduction ou de renouvellement.
 
 </pre>
@@ -257,6 +307,7 @@ LE BAILLEUR                                                                     
 de la mention manuscrite                                                               de la mention manuscrite                                                       de la mention manuscrite
 « Lu et approuvé »)                                                                      « Lu et approuvé »)                                                                       « Lu et approuvé ») 
 
-<h2>", "default/print.html.twig", "/var/www/html/Premium_Immobilier/app/Resources/views/default/print.html.twig");
+<h2>
+{%endfor%}", "default/print.html.twig", "/var/www/html/Premium_Immobilier/app/Resources/views/default/print.html.twig");
     }
 }

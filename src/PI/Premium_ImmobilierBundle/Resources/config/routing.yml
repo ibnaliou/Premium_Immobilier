@@ -25,7 +25,14 @@ catalogue:
         path:       /front/bien/catalogue
         defaults: { _controller: PremiumBundle:Front:catalogueBien }
 
+#route confiez bien
+confier:
+ path: /front/bien/proprietaire
+ defaults: { _controller: PremiumBundle:Front:confieBien }
 
+
+
+ 
 
 ################ LES ROUTES DE L' ADMIN ############################
 
@@ -78,4 +85,12 @@ Calendar:
 #route ajouter
 formbien:
     path:     /administrator/bien
-    defaults: { _controller: PremiumBundle:Admin:formbien }        
+    defaults: { _controller: PremiumBundle:Admin:formbien }  
+    #route afficher liste reservation en cours
+list_reservationPro:
+        path:       /admin/reservationpro
+        defaults: { _controller: PremiumBundle:Admin:proreservation }
+      
+list_reservePro:
+        path:       /admin/listreservation
+        defaults: { _controller: PremiumBundle:Admin:reserver}

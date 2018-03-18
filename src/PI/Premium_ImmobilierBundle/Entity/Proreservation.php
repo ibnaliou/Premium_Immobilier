@@ -38,7 +38,7 @@ class Proreservation
 
       /**
    
-      * @ORM\OneToOne(targetEntity="PI\Premium_ImmobilierBundle\Entity\Probien")
+      * @ORM\OneToOne(targetEntity="PI\Premium_ImmobilierBundle\Entity\Bien")
    
       */
    

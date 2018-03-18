@@ -154,6 +154,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::printContratAction',  '_route' => 'print_reservation',);
                 }
 
+                // list_reservationPro
+                if ('/admin/reservationpro' === $pathinfo) {
+                    return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::proreservationAction',  '_route' => 'list_reservationPro',);
+                }
+
             }
 
             elseif (0 === strpos($pathinfo, '/administrator')) {
@@ -177,6 +182,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // Calendar
             if ('/admin/Calendar' === $pathinfo) {
                 return array (  '_controller' => 'DiamontBundle:Admin:Calendar',  '_route' => 'Calendar',);
+            }
+
+            // list_reservePro
+            if ('/admin/listreservation' === $pathinfo) {
+                return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::reserverAction',  '_route' => 'list_reservePro',);
             }
 
             // easyadmin
@@ -213,6 +223,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // catalogue
             if ('/front/bien/catalogue' === $pathinfo) {
                 return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\FrontController::catalogueBienAction',  '_route' => 'catalogue',);
+            }
+
+            // confier
+            if ('/front/bien/proprietaire' === $pathinfo) {
+                return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\FrontController::confieBienAction',  '_route' => 'confier',);
             }
 
         }

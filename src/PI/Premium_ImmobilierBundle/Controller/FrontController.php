@@ -1,18 +1,16 @@
 <?php
 
 namespace PI\Premium_ImmobilierBundle\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use PI\Premium_ImmobilierBundle\Entity\TypeBien;
 use PI\Premium_ImmobilierBundle\Entity\Localite;
 use PI\Premium_ImmobilierBundle\Entity\Bien;
 use PI\Premium_ImmobilierBundle\Entity\Image;
 use PI\Premium_ImmobilierBundle\Entity\Client;
 use PI\Premium_ImmobilierBundle\Entity\Reservation;
-
-
-
+use PI\Premium_ImmobilierBundle\Entity\Proprietaire;
+use PI\Premium_ImmobilierBundle\Entity\Proreservation;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -181,6 +179,78 @@ class FrontController extends Controller
         array("biens"=>$listebien));
 
   }
+
+  public function confieBienAction(Request $request)
+ {
+     //reception par post venant du formulaire propritaire
+     $em = $this->getDoctrine()->getManager();
+     if ($request->isMethod('POST') && isset($_POST['confier']) ) {
+         extract($_POST);
+         //proprietaire
+         $proprietaire = new Proprietaire();
+         $proprietaire->setNumPiece($numpiece);
+         $proprietaire->setNomComplet($nomcomplet);
+         $proprietaire->setTel($tel);
+         $proprietaire->setAdresse($adresse);
+         $proprietaire->setEmail($email);
+         $proprietaire->setCodeBanque($codebanque);
+         $em->persist($proprietaire);
+         $em->flush();
+
+        //  //localite
+         $localit= new Localite();
+         $localit->setLibelle($localite);
+         $em->persist($localit);
+         $em->flush();
+         //type
+         $typebien= new TypeBien();
+         $typebien->setLibelle($type);
+         $em->persist($typebien);
+         $em->flush();
+
+        //bien
+        $bien=new Bien();
+        $bien->setNomBien($nomBien);
+        $bien->setEtat("-1");
+        $bien->setDescription($description);
+        $bien->setPrixlocation($prix);
+        $bien->setLocalite($localit);
+        $bien->setTypeBien($typebien);
+        
+        //image
+
+
+
+
+
+
+
+         
+
+
+        //  $bien= $em->getRepository(Bien::class)->find($idbienareserver);
+        
+        //  $reservation = new Reservation();
+        //  $reservation->setEtat('0');
+        //  $reservation->setBien($bien);
+        //  $reservation->setClient($client);
+        //  $reservation->setDateReservation(new \DateTime('now'));
+        //  $em->persist($reservation);
+        //  $em->flush();
+        
+        //  $bien = $this->getDoctrine()
+        //  ->getManager()
+        //  ->getRepository('PremiumBundle:Bien')
+        //  ->FindBienById($idbienareserver);
+        //  return $this->render('PremiumBundle:Front:reserver.html.twig', array(
+        //      'biens' => $bien
+        //  ));
+     }
+     return $this->render('PremiumBundle:Front:proprietaire.html.twig');
+
+ }
+
+
 
 
 

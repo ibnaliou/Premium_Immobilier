@@ -4,10 +4,11 @@
 <b>ENTRE LES SOUSSIGNES</b><br><br>
 PREMIUM IMMOBILIER SA sise &agrave; CTIC DAKAR <br>
 <pre>CI-APRES DENOMME                                                            <u>LE BAILLEUR </u>                                                                                        d'une part,
-
-ET M. Mme, Melle ........
-n&eacute;(e) le .........
-demueurant .....
+{%for contrat in contrats%}
+ET M. Mme, Melle {{contrat.Client.nomComplet|upper}}......
+n&eacute;(e) le ......... 
+demueurant à..{{contrat.Client.adresse}}...
+Numero Carte Nationale {{contrat.Client.numPiece}}, Numero Téléphone {{contrat.Client.tel}}
 
 CI-APRES DENOMME                                                            <u>LE LOCATAIRE</u>                                                                                      d'autre part.
 </pre>
@@ -22,10 +23,18 @@ conditions suivantes.
 <b>DESIGNATION</b><pre>
 
 Adresse des locaux lou&eacute;
-...........
+..... {{contrat.Bien.Localite.libelle|upper}} ......
+
+Prix de location;
+..... {{contrat.Bien.prixlocation}} FCFA......
+
+Caution de la location
+..... {{contrat.Bien.prixlocation}} FCFA......
+
+
 
 Consistance et d&eacute;signations des lieux :
-................
+.....{{contrat.Bien.description}}...........
 
 
 
@@ -38,7 +47,7 @@ Consistance et d&eacute;signations des lieux :
 
 <b>DUREE</b><pre>
 
-Le pr&eacute;sent contrat est consenti pour une durée de......................ans commençant à courir le ............................et se terminant le .................................sous 
+Le pr&eacute;sent contrat est consenti pour une durée de.......1 (un)...............ans commençant à courir le ............................et se terminant le .................................sous 
 réserve de reconduction ou de renouvellement.
 
 </pre>
@@ -98,3 +107,4 @@ de la mention manuscrite                                                        
 « Lu et approuvé »)                                                                      « Lu et approuvé »)                                                                       « Lu et approuvé ») 
 
 <h2>
+{%endfor%}
