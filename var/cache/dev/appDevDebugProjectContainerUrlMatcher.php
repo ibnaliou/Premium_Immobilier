@@ -184,9 +184,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'DiamontBundle:Admin:Calendar',  '_route' => 'Calendar',);
             }
 
-            // list_reservePro
-            if ('/admin/listreservation' === $pathinfo) {
-                return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::reserverAction',  '_route' => 'list_reservePro',);
+            if (0 === strpos($pathinfo, '/admin/listreservation')) {
+                // list_reservePro
+                if ('/admin/listreservation' === $pathinfo) {
+                    return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::reserverAction',  '_route' => 'list_reservePro',);
+                }
+
+                // info_reservePro
+                if ('/admin/listreservation' === $pathinfo) {
+                    return array (  '_controller' => 'PI\\Premium_ImmobilierBundle\\Controller\\AdminController::reserverAction',  '_route' => 'info_reservePro',);
+                }
+
             }
 
             // easyadmin

@@ -13,18 +13,37 @@
 
 {% endblock %}
 {% block offre %}
+{% block partenaires %}
+
+{% endblock %}
  <div>
  <br><br>
  <br><br>
  </div>
- <div style="margin-left:20px" class="container">
+ <div style="display:flex " class="container">
 
-{% block partenaires %}
+    <div class="mg-testi-partners parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="mg-sec-left-title">ICI CONFIER VOS BIENS</h2>
+                        <div class="mg-testimonial-slider" id="mg-testimonial-slider">
+                            <blockquote>
+                                <p>Chez Premium Immobilier nous croyons au traitement de tout collaborateur avec respect et nous intégrons l'honnêteté, l'intégrité et l'éthique dans tous les aspects du fonctionnement de l'entreprise.</p>
+                                <footer>Premium Immobilier</footer>
+                            </blockquote>
+                            <blockquote>
+                                <p>La stratégie de Premium Immobilier est bâtie sur un objectif précis qui est de devenir à court terme le chef de file du secteur immobilier sous-régional et un acteur clé de l'industrie en fournissant des services exceptionnels, innovants, rentables et de qualité qui dépassent les attentes des clients et partenaires.</p>
+                                <footer>Premium Immobilier</footer>
+                            </blockquote>
+                            <blockquote>
+                                <p>Notre mission est de construire une relation à long terme avec tous nos clients et partenaires en nous basant sur un modèle d'affaire ancré sur la créativité et la technologie de pointe.</p>
+                                <footer>Premium Immobilier</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <fieldset style=""> <legend> <a style="color:white" id="conne" > J'AI DEJA UN COMPTE </a> <span style="color:orange">OU<span> <a style="color:white" id="insc" > JE SUIS NOUVEAU </a></legend>
 
-
-
-{% endblock %}
-<fieldset style=""> <legend> <a id="conne" > J'AI DEJA UN COMPTE </a> OU <a id="insc" > JE SUIS NOUVEAU </a></legend>
 <form id="formconnexion" style="background-color:orange">
 
 <div id="infopersoapro"><!--debut div info perso ancien proritaire-->
@@ -46,7 +65,7 @@
         <input name="password" type="password" id="materialFormLoginPasswordEx" class="form-control">
     </div>
     
-    <a name="" id="next" class="btn btn-dark"  role="button">suivant</a>
+    <center><a name="" id="next" class="btn btn-dark"   role="button">suivant</a> </center>
 </div><!--end div info perso ancien proritaire-->
 
 <div id="infobienapro" ><!--debut div info bien ancien proritaire-->
@@ -83,15 +102,12 @@
         <input name="prix" type="number" placeholder="20000000"   class="form-control" required>
     </div>
 
-     <!-- IMAGE DU BIEN-->
-    <div class="md-form">
+       <!-- IMAGE DU BIEN-->
+    <div class="md-form fallback dropzone ">
         <i class="fa fa-picture prefix grey-text"></i>
                 <label for="materialFormLoginPasswordEx"> Images du Bien</label>
-        <input name="image1" type="file" placeholder="20000000"   class="form-control" required>
-        <input name="image2" type="file" placeholder="20000000"   class="form-control" >
-        <input name="image3" type="file" placeholder="20000000"   class="form-control" >
+        <input name="image1" type="file"   multiple="multiple"  class="form-control" required>    
     </div>
-
     <!--DESCRIPTION DU BIEN-->
     <div class="md-form">
         <i class="fa fa-money prefix grey-text"></i>
@@ -181,7 +197,7 @@
      {# {% for bien in  biens %}
    <input  type="hidden" name="idbienareserver" value="{{bien.id}}">
     {% endfor %} #}
- <a name="" id="next2" class="btn btn-dark"  role="button">suivant</a>
+  <center><a name="" id="next2" class="btn btn-dark"  role="button">suivant</a> </center>
 </div><!--end div info perso new proritaire-->
 
 <div id="infobiennpro" ><!--debut div info bien new proritaire-->
@@ -219,12 +235,11 @@
     </div>
 
      <!-- IMAGE DU BIEN-->
-    <div class="md-form">
+    <div class="md-form fallback dropzone ">
         <i class="fa fa-picture prefix grey-text"></i>
                 <label for="materialFormLoginPasswordEx"> Images du Bien</label>
-        <input name="image1" type="file" placeholder="20000000"   class="form-control" required>
-        <input name="image2" type="file" placeholder="20000000"   class="form-control" >
-        <input name="image3" type="file" placeholder="20000000"   class="form-control" >
+        <input name="image1" type="file"  placeholder="20000000" multiple="multiple"  class="form-control" required>
+        
     </div>
 
     <!--DESCRIPTION DU BIEN-->
@@ -247,6 +262,11 @@
 
  
   </fieldset>
+                </div>
+            </div>
+        </div>
+
+
 
 
 

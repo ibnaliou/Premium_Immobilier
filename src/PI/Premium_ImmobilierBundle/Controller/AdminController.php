@@ -8,6 +8,8 @@ use PI\Premium_ImmobilierBundle\Entity\Localite;
 use PI\Premium_ImmobilierBundle\Entity\Bien;
 use PI\Premium_ImmobilierBundle\Entity\Image;
 use PI\Premium_ImmobilierBundle\Entity\Reservation;
+use PI\Premium_ImmobilierBundle\Entity\Proreservation;
+
 use PI\Premium_ImmobilierBundle\Entity\Paiement;
 use PI\Premium_ImmobilierBundle\Entity\Contrat;
 use PI\Premium_ImmobilierBundle\Entity\Client;
@@ -248,6 +250,20 @@ class AdminController extends Controller
         return $this->render('PremiumBundle:Admin:proreservation.html.twig',
         array('proreservations' => $reservationpro));
     }
+
+    /*****afficher les information d'une reservation Proprietaire  */
+    public function reserverAction(Request $request){
+
+        extract($_GET);
+             $reserver = $this->getDoctrine()
+              ->getManager()
+              ->getRepository('PremiumBundle:Proreservation')
+              ->findProreservationById($id);
+              return $this->render('PremiumBundle:Admin:proreservationinfo.html.twig', array(
+                  'proreservations' => $reserver
+              // ...
+          ));
+      }
 
    
 }

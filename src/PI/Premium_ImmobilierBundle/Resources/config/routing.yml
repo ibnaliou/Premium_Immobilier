@@ -90,7 +90,14 @@ formbien:
 list_reservationPro:
         path:       /admin/reservationpro
         defaults: { _controller: PremiumBundle:Admin:proreservation }
-      
+
+
+#liste reservation faite par proprietaire   
 list_reservePro:
         path:       /admin/listreservation
         defaults: { _controller: PremiumBundle:Admin:reserver}
+
+#details reservation faite par le proprietaire
+info_reservePro:
+        path:       /admin/listreservation
+        defaults: { _controller: PremiumBundle:Admin:reserver}        

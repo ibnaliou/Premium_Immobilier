@@ -15,11 +15,11 @@ class __TwigTemplate_6ee109ee84b33f4e1b4a0a0df06fe2b0523a77290fe53b373144c09108a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284->enter($__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
+        $__internal_51677928198e3ee9a7c1b658c5713914d3129a47db89afd90e3357df27abe309 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_51677928198e3ee9a7c1b658c5713914d3129a47db89afd90e3357df27abe309->enter($__internal_51677928198e3ee9a7c1b658c5713914d3129a47db89afd90e3357df27abe309_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
 
-        $__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6->enter($__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
+        $__internal_203ebc6c7f121cc326d3951ecddec1840e455427e2ee6b7d0aa9422c5203ceed = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_203ebc6c7f121cc326d3951ecddec1840e455427e2ee6b7d0aa9422c5203ceed->enter($__internal_203ebc6c7f121cc326d3951ecddec1840e455427e2ee6b7d0aa9422c5203ceed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/print.html.twig"));
 
         // line 1
         echo " <center><h1> CONTRAT DE LOCATION </h1></center>
@@ -67,7 +67,7 @@ conditions suivantes.
 Adresse des locaux lou&eacute;
 ..... ";
             // line 26
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["contrat"], "Bien", array()), "Localite", array()), "libelle", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["contrat"], "Bien", array()), "Localite", array()), "libelle", array())), "html", null, true);
             echo " ......
 
 Prix de location;
@@ -167,10 +167,10 @@ de la mention manuscrite                                                        
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contrat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284->leave($__internal_be30939598586d33bd3edd788b1575696e2c1d39298455690a543371de36d284_prof);
+        $__internal_51677928198e3ee9a7c1b658c5713914d3129a47db89afd90e3357df27abe309->leave($__internal_51677928198e3ee9a7c1b658c5713914d3129a47db89afd90e3357df27abe309_prof);
 
         
-        $__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6->leave($__internal_5f49cdd596ae675146fbdf8adc10c86c1fb317ad9de60cd342a7335ee0b6d2d6_prof);
+        $__internal_203ebc6c7f121cc326d3951ecddec1840e455427e2ee6b7d0aa9422c5203ceed->leave($__internal_203ebc6c7f121cc326d3951ecddec1840e455427e2ee6b7d0aa9422c5203ceed_prof);
 
     }
 
@@ -224,7 +224,7 @@ conditions suivantes.
 <b>DESIGNATION</b><pre>
 
 Adresse des locaux lou&eacute;
-..... {{contrat.Bien.Localite.libelle}} ......
+..... {{contrat.Bien.Localite.libelle|upper}} ......
 
 Prix de location;
 ..... {{contrat.Bien.prixlocation}} FCFA......

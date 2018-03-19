@@ -63,7 +63,7 @@
                                             <td>{{reservation.Bien.prixlocation}}</td>
                                             <td> <img class="lesimages"  src="{{ asset('images/')}}{{reservation.bien.images[0].image}}" alt="img1" id="" class="img-responsive"></td>
                                             <td class="actions">
-                                                <a href="{{path ('list_reservePro')}}" class="btn btn-primary" >Details</a></td>
+                                                <a href="{{path ('list_reservePro',{'id':reservation.id})}}" class="btn btn-primary" >Details</a></td>
                                             </td>
                                         </tr>
                                         
